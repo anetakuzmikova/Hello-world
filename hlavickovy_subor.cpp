@@ -45,22 +45,22 @@ int nacti_vzdelani(int& vzdelani)
 
 void nacti_jmeno(string& jmeno, string& prijmeni)
 {
-    cout<<"zadejte cele jmeno";
+    cout<<"zadejte cele jmeno ve tvaru 'krestni jmeno mezera prijmeni'";
     cin>>jmeno>>prijmeni;
 
 }
 
-void uloz_do_souboru (string jmeno, string prijmeni, int vek, int vyska, int vzdelani)
+void uloz_do_souboru (string vypis_jmeno, string vypis_prijmeni, int vypis_vek, int vypis_vyska, int vypis_vzdelani)
 //neni nutne pouzivat reference,protoze fce nemeni hodnoty promennych v mainu(?)
 {
     fstream soubor("uzivatelskeudaje.txt", ios::out);
-    soubor<<"Vyplnil/a jste tyto udaje:\njmeno a prijmeni: "<<jmeno<<" "<<prijmeni<<" \nvek: "<<vek<<"\nvyska"<<vyska<<"\ndosazene vzdelani: ";
+    soubor<<"Vyplnil/a jste tyto udaje:\njmeno a prijmeni: "<<vypis_jmeno<<" "<<vypis_prijmeni<<" \nvek: "<<vypis_vek<<"\nvyska: "<<vypis_vyska<<"\ndosazene vzdelani: ";
 
-    if (vzdelani==1)
+    if (vypis_vzdelani==1)
     {
         soubor<<"zakladni";
     }
-    else if (vzdelani==2)
+    else if (vypis_vzdelani==2)
     {
        soubor<<"stredoskolske";
     }
