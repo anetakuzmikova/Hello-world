@@ -1,14 +1,12 @@
-#ifndef HLAVICKOVY_SOUBOR_H_INCLUDED
-#define HLAVICKOVY_SOUBOR_H_INCLUDED
+#ifndef CLOVEK_H_INCLUDED
+#define CLOVEK_H_INCLUDED
 #include <string>
 
 
-int nacti_vek(int& vek, int nejmensi_vek, int nejvetsi_vek);
-int nacti_vysku(int& vyska, int nejmensi_vyska, int nejvetsi_vyska);
-int nacti_vzdelani(int& vzdelani);
-void nacti_jmeno(std::string& jmeno,std::string&prijmeni);
+void nacti_udaje(std::string& jmeno, std::string& prijmeni, int& vek, int& vyska, int& vzdelani);
 void uloz_do_souboru (std::string vypis_jmeno, std::string vypis_prijmeni, int vypis_vek, int vypis_vyska, int vypis_vzdelani);
 
-#endif // HLAVICKOVY_SOUBOR_H_INCLUDED
+
+#endif // CLOVEK_H_INCLUDED
 
 
