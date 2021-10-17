@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "hlavickovy_soubor.h"
+#include "clovek.h"
 #include <string>
 
 
@@ -18,16 +18,15 @@ jmeno="mojekrestnijmeno";
 prijmeni="mojeprijmeni";
 
 
-vek=nacti_vek (vek, 0,130);
-vyska=nacti_vysku (vyska, 150,250);
-vzdelani=nacti_vzdelani (vzdelani);
-nacti_jmeno(jmeno, prijmeni);
+nacti_udaje(jmeno,prijmeni,vek,vyska,vzdelani);
 uloz_do_souboru(jmeno,prijmeni,vek,vyska,vzdelani);
 
 
 cout<<"\nkontrolni vypis po fcich: vek, vyska, vzdelani:  "<<vek<<",  "<<vyska<<",  "<<vzdelani<<",  "<<jmeno<<" "<<prijmeni<<"\n";
+
 }
 
-//string jmeno,prijmeni;
-//cout<<"zadejte jmeno ve tvaru 'jmeno prijmeni'\n";
-//cin>>jmeno>>prijmeni;
+
+
+
+
