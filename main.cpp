@@ -1,32 +1,43 @@
 #include <iostream>
-#include <fstream>
-#include "clovek.h"
-#include <string>
-
-
+#include"Clovek.h"
+#include<string>
+#include<vector>
+#include<fstream>
+#include<iostream>
 using namespace std;
+
 int main()
 {
-int vyska,vzdelani,vek;
-string jmeno, prijmeni;
+string rozhodnuti;
+Clovek uzivatel(0,130,150,250); //nechce se prelozit s konstrukorem bez parametru
+vector<string> vektor_jmen(0);
+vector<string> vektor_prijmeni(0);
+vector<int> vektor_veku(0);
+vector<int> vektor_vysek(0);
+vector<int> vektor_vzdelani(0);
+string krestni_jmeno, prijmeni;
+int vek, vyska, vzdelani,i;
+rozhodnuti="ano";
 
 
-vek=0;
-vyska=0;
-vzdelani=0;
-jmeno="mojekrestnijmeno";
-prijmeni="mojeprijmeni";
+    while (rozhodnuti=="ano"){
+        uzivatel.nacti(krestni_jmeno, prijmeni, vek, vyska, vzdelani);
+        vektor_jmen.push_back(krestni_jmeno);
+        vektor_prijmeni.push_back(prijmeni);
+        vektor_veku.push_back(vek);
+        vektor_vysek.push_back(vyska);
+        vektor_vzdelani.push_back(vzdelani);
+
+        cout<<"prejete si zadat dalsiho uzivatele? Napiste 'ano', nebo 'ne'\n";
+        cin>>rozhodnuti;
+        }
 
 
-nacti_udaje(jmeno,prijmeni,vek,vyska,vzdelani);
-uloz_do_souboru(jmeno,prijmeni,vek,vyska,vzdelani);
+    for (i=0;i<vektor_veku.size();i++)
+    {
+        uzivatel.zapis(vektor_jmen[i], vektor_prijmeni[i], vektor_veku[i], vektor_vysek[i], vektor_vzdelani[i]);
+    }
 
 
-cout<<"\nkontrolni vypis po fcich: vek, vyska, vzdelani:  "<<vek<<",  "<<vyska<<",  "<<vzdelani<<",  "<<jmeno<<" "<<prijmeni<<"\n";
-
+return 0;
 }
-
-
-
-
-
